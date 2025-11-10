@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Profile Picture -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Message Content -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp">
+
+        <!-- Name and Time Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="The Mim"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8m"
+                android:textSize="12sp"
+                android:textColor="#999999" />
+
+        </LinearLayout>
+
+        <!-- Last Message -->
+        <TextView
+            android:id="@+id/last_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seems to be waiting for a reply to your message sent 1 month ago"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <!-- Right Side Indicators -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Online Status Indicator -->
+        <View
+            android:id="@+id/online_indicator"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/online_indicator"
+            android:visibility="gone" />
+
+        <!-- Unread Count Badge -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/unread_badge"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FF3B30"
+            android:layout_marginTop="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/unread_count_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Message Status Icon (for sent messages) -->
+        <ImageView
+            android:id="@+id/message_status_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_check_double"
+            android:layout_marginTop="4dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

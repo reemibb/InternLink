@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8FAFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header Section with Back Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/left_arrow"
+                    app:tint="#1E293B"
+                    android:contentDescription="Back button" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create New Project"
+                    android:textColor="#1E293B"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.01"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fill in the details below to post your project."
+                android:textColor="#64748B"
+                android:textSize="16sp"
+                android:letterSpacing="0.01"/>
+        </LinearLayout>
+
+        <!-- Project Details Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="#2563EB"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Project Details"
+                        android:textColor="#1E293B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"/>
+                </LinearLayout>
+
+                <!-- Project Title -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/title_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Project Title"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/title_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textColor="#0F172A"
+                        android:padding="16dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Project Description -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/description_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Project Description"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="240">  <!-- CHANGE THIS FROM 500 TO 240 -->
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:textColor="#0F172A"
+                        android:padding="16dp"
+                        android:maxLength="240" />  <!-- ADD THIS LINE TO ENFORCE THE LIMIT -->
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Project Category -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/location_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Project Location"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/location_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:padding="16dp"
+                        android:textColor="#0F172A"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Project Category -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/category_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Project Category"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/category_auto_complete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="16dp"
+                        android:imeOptions="actionDone"
+                        android:completionThreshold="0"
+                        android:textColor="#0F172A"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Skills Required -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/skills_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Skills Required"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/skills_auto_complete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="16dp"
+                        android:textColor="#0F172A"
+                        android:imeOptions="actionDone"
+                        android:completionHint="Select multiple skills"
+                        android:completionThreshold="1"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Skills Chips Display -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/skills_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:singleSelection="false"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="8dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="#2563EB"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Timeline"
+                        android:textColor="#1E293B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"/>
+                </LinearLayout>
+
+                <!-- Duration & Dates Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <!-- Project Duration -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/duration_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Duration"
+                        android:layout_marginEnd="12dp"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/duration_auto_complete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingStart="5dp"
+                            android:textColor="#0F172A"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Start Date -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/start_date_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Start Date"
+                        android:layout_marginEnd="12dp"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/start_date_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:padding="16dp"
+                            android:textColor="#0F172A"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Deadline -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/deadline_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Deadline"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/deadline_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:padding="16dp"
+                            android:textColor="#0F172A"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="#2563EB"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Team Requirements"
+                        android:textColor="#1E293B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"/>
+                </LinearLayout>
+
+                <!-- Students & Education Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Number of Students -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/students_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Positions Required"
+                        android:layout_marginEnd="12dp"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/students_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="16dp"
+                            android:textColor="#0F172A"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Education Level -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/education_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Education Level"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/education_auto_complete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:padding="16dp"
+                            android:textColor="#0F172A"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="#2563EB"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Compensation"
+                        android:textColor="#1E293B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"/>
+                </LinearLayout>
+
+                <!-- Stipend/Compensation -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/stipend_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Compensation Type"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/stipend_auto_complete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:padding="16dp"
+                        android:textColor="#0F172A"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Amount Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/amount_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Amount (USD)"
+                    android:visibility="gone"
+                    app:boxStrokeColor="#1E293B"
+                    app:hintTextColor="#64748B"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/amount_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:padding="16dp"
+                        android:textColor="#0F172A"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Contact info fields would go here -->
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quiz Section Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="20dp"
+                            android:background="#2563EB"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Screening Quiz"
+                            android:textColor="#1E293B"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.01"/>
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/quiz_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="#3B82F6"
+                        app:trackTint="#BAE6FD"/>
+                </LinearLayout>
+
+                <!-- Quiz Fields (Initially Hidden) -->
+                <LinearLayout
+                    android:id="@+id/quiz_fields_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp">
+
+                    <!-- Quiz Title -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/quiz_title_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Quiz Title"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/quiz_title_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:textColor="#0F172A"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/quiz_instructions_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="Quiz Instructions"
+                        app:boxStrokeColor="#1E293B"
+                        app:hintTextColor="#64748B"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/quiz_instructions_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:textColor="#0F172A"
+                            android:padding="16dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Time Limit & Passing Score -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Time Limit -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/time_limit_input_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Time Limit (minutes)"
+                            android:layout_marginEnd="8dp"
+                            app:boxStrokeColor="#1E293B"
+                            app:hintTextColor="#64748B"
+                            app:boxStrokeWidth="1.5dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/time_limit_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:padding="16dp"
+                                android:textColor="#0F172A"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Passing Score -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/passing_score_input_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Passing Score (%)"
+                            app:boxStrokeColor="#1E293B"
+                            app:hintTextColor="#64748B"
+                            app:boxStrokeWidth="1.5dp"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/passing_score_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:padding="16dp"
+                                android:textColor="#0F172A"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <!-- Questions Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Questions"
+                        android:textColor="#1E293B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:letterSpacing="0.01"/>
+
+                    <!-- Questions Container -->
+                    <LinearLayout
+                        android:id="@+id/questions_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp"/>
+
+                    <!-- Add Question Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/add_question_button"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="+ Add Question"
+                        android:textColor="#1E293B"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_add"
+                        app:iconTint="#1E293B"
+                        app:strokeColor="#1E293B"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Submit Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#2563EB"
+            android:text="Publish Project"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:letterSpacing="0.01"
+            android:elevation="4dp"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+</ScrollView>

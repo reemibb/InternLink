@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+
+        <!-- Top App Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp">
+
+            <!-- Menu Icon -->
+            <ImageView
+                android:id="@+id/menu_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/left_arrow"
+                app:tint="@color/blue"
+                android:contentDescription="Back" />
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Messages"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center" />
+
+            <!-- Archive Icon -->
+
+            <!-- Menu/Options Icon -->
+
+        </LinearLayout>
+
+        <!-- Tab Layout for Active/Archive -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="1dp">
+
+            <!-- Active Tab -->
+            <LinearLayout
+                android:id="@+id/tab_active"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tab_active_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <View
+                    android:id="@+id/tab_active_indicator"
+                    android:layout_width="40dp"
+                    android:layout_height="2dp"
+                    android:background="@color/blue" />
+
+            </LinearLayout>
+
+            <!-- Archive Tab -->
+            <LinearLayout
+                android:id="@+id/tab_archive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tab_archive_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Archive"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="4dp" />
+
+                <View
+                    android:id="@+id/tab_archive_indicator"
+                    android:layout_width="40dp"
+                    android:layout_height="2dp"
+                    android:background="@android:color/transparent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:background="#FFFFFF">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F5F5F5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/blue"
+                        android:layout_marginEnd="8dp" />
+
+                    <EditText
+                        android:id="@+id/message_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Search messages"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:background="@android:color/transparent"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Filter Icon -->
+            <ImageView
+                android:id="@+id/ic_filter"
+                android:layout_width="24dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_filter"
+                app:tint="@color/blue" />
+
+        </LinearLayout>
+
+        <!-- Content Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Active Messages List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/messages_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp"
+                android:clipToPadding="false" />
+
+            <!-- Archived Messages List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/archived_messages_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp"
+                android:clipToPadding="false"
+                android:visibility="gone" />
+
+            <!-- Empty State for Active Messages -->
+            <LinearLayout
+                android:id="@+id/tv_empty_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_chat_bubble"
+                    android:alpha="0.3"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No conversations yet"
+                    android:textSize="18sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start chatting with companies about your applications"
+                    android:textSize="14sp"
+                    android:textColor="#999999"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="32dp" />
+
+            </LinearLayout>
+
+            <!-- Empty State for Archived Messages -->
+            <LinearLayout
+                android:id="@+id/tv_empty_state_archive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_archive"
+                    android:alpha="0.3"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No archived conversations"
+                    android:textSize="18sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conversations you archive will appear here"
+                    android:textSize="14sp"
+                    android:textColor="#999999"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="32dp" />
+
+            </LinearLayout>
+
+            <!-- Floating Action Button (only visible on Active tab) -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_new_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_add"
+                app:backgroundTint="#007AFF"
+                app:tint="#FFFFFF"
+                app:fabSize="normal" />
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="generateCvBtn" type="id" />
+    <item name="btnSaveChanges" type="id" />
+    <item name="uploadBtn" type="id" />
+    <item name="editGraduationYear" type="id" />
+    <item name="viewBtn" type="id" />
+    <item name="generationProgress" type="id" />
+    <item name="generationStatus" type="id" />
+    <item name="applicants_recycler" type="id" />
+    <item name="applicants_container" type="id" />
+    <item name="expand_collapse_icon" type="id" />
+    <item name="progressBar" type="id" />
+    <item name="tvTitle" type="id" />
+    <item name="btnSearch" type="id" />
+    <item name="btnStartConversation" type="id" />
+    <item name="name_text" type="id" />
+    <item name="time_text" type="id" />
+    <item name="last_message_text" type="id" />
+    <item name="online_indicator" type="id" />
+    <item name="unread_badge" type="id" />
+    <item name="unread_count_text" type="id" />
+    <item name="message_status_icon" type="id" />
+    <item name="project_filter_chips" type="id" />
+    <item name="chip_ongoing_projects" type="id" />
+    <item name="chip_completed_projects" type="id" />
+    <item name="chip_all_projects" type="id" />
+</resources>

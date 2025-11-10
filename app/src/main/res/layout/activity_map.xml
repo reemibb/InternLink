@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <!-- Search Bar -->
+
+    <!-- WebView for Map -->
+    <WebView
+        android:id="@+id/mapWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+
+    <!-- Floating Action Button for current location -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/currentLocationFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:contentDescription="Current location" />
+
+    <!-- Project details bottom sheet -->
+    <LinearLayout
+        android:id="@+id/projectDetailsSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:elevation="8dp">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/projectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/projectLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:drawableStart="@android:drawable/ic_dialog_map"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/projectCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:background="@drawable/chip_background"
+            android:padding="6dp"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/viewDetailsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View Details"
+                android:background="@drawable/rounded_background"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/applyButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Apply Now"
+                android:background="@drawable/button_rounded" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

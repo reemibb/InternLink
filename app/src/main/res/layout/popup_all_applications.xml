@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"> <!-- Semi-transparent black background -->
+
+    <!-- Scrollable Card Container -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_margin="24dp">
+
+        <LinearLayout
+            android:id="@+id/card_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Close Button -->
+            <ImageView
+                android:id="@+id/btn_close_popup"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:contentDescription="Close"
+                android:src="@drawable/ic_close" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/popup_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="My Applications"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/filter_chips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="4dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:checked="true"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_accepted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accepted"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_interview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interviews"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_pending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pending"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_rejected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rejected"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- RecyclerView with dynamic height -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_applications"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

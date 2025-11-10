@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Main applicant info row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Profile Image (smaller) -->
+            <ImageView
+                android:id="@+id/applicant_profile_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"
+                tools:ignore="ContentDescription" />
+
+            <!-- Applicant details (more compact) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/applicant_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:text="Sarah Johnson" />
+
+                <TextView
+                    android:id="@+id/applicant_position"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="9sp"
+                    tools:text="Computer Science Student at MIT" />
+
+                <LinearLayout
+                    android:id="@+id/quiz_grade_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/quiz_grade_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quiz: 85%"
+                        android:textSize="10sp"
+                        android:textColor="@color/blue_500"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Status badge (smaller) -->
+            <TextView
+                android:id="@+id/applicant_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:textColor="@color/blue_500"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:text="Shortlisted" />
+        </LinearLayout>
+
+        <!-- Action buttons row (more compact) -->
+        <LinearLayout
+            android:layout_width="202dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- View Profile Button -->
+            <ImageView
+                android:id="@+id/btn_view_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/rounded_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/blue_500"
+                tools:ignore="ContentDescription" />
+
+            <!-- Schedule Interview Button -->
+            <ImageView
+                android:id="@+id/btn_schedule_interview"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/rounded_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="@color/blue_500"
+                tools:ignore="ContentDescription" />
+
+            <!-- Chat Button -->
+            <ImageView
+                android:id="@+id/btn_chat"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/rounded_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:src="@drawable/ic_chat"
+                app:tint="@color/blue_500"
+                tools:ignore="ContentDescription" />
+
+            <!-- More Options Button -->
+            <ImageView
+                android:id="@+id/btn_more_options"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/rounded_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:src="@drawable/ic_more"
+                app:tint="@color/blue_500"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,254 @@
+<resources>
+    <string-array name="project_categories">
+        <item>Web Development</item>
+        <item>Mobile App Development</item>
+        <item>Artificial Intelligence</item>
+        <item>Data Science</item>
+        <item>UI/UX Design</item>
+        <item>Digital Marketing</item>
+        <item>Content Writing</item>
+        <item>Graphic Design</item>
+    </string-array>
+
+    <string-array name="project_durations">
+        <item>1-2 weeks</item>
+        <item>3-4 weeks</item>
+        <item>1-2 months</item>
+        <item>3-4 months</item>
+        <item>5-6 months</item>
+        <item>More than 6 months</item>
+    </string-array>
+
+    <string-array name="education_levels">
+        <item>Any</item>
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+        <item>Graduate</item>
+    </string-array>
+    <!-- Tech Skills Array -->
+    <string-array name="tech_skills">
+        <item>Java</item>
+        <item>Python</item>
+        <item>JavaScript</item>
+        <item>Ruby</item>
+        <item>C#</item>
+        <item>HTML/CSS</item>
+        <item>SQL</item>
+        <item>React</item>
+        <item>Node.js</item>
+        <item>Android</item>
+    </string-array>
+    <string-array name="question_types">
+        <item>Multiple Choice</item>
+        <item>True/False</item>
+    </string-array>
+    <!-- Language proficiency levels -->
+    <string-array name="proficiency_levels">
+        <item>Native Speaker</item>
+        <item>Fluent</item>
+        <item>Advanced</item>
+        <item>Intermediate</item>
+        <item>Basic</item>
+        <item>Beginner</item>
+    </string-array>
+
+    <!-- Month names for date selection -->
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- Common job titles for autocomplete suggestions -->
+    <string-array name="job_titles">
+        <item>Software Engineer</item>
+        <item>Project Manager</item>
+        <item>Data Analyst</item>
+        <item>UX Designer</item>
+        <item>Marketing Specialist</item>
+        <item>Financial Analyst</item>
+        <item>HR Manager</item>
+        <item>Sales Executive</item>
+        <item>Product Manager</item>
+        <item>Graphic Designer</item>
+    </string-array>
+
+    <!-- Common skills for autocomplete suggestions -->
+    <string-array name="common_skills">
+        <item>Java</item>
+        <item>Python</item>
+        <item>JavaScript</item>
+        <item>SQL</item>
+        <item>Project Management</item>
+        <item>Data Analysis</item>
+        <item>UI/UX Design</item>
+        <item>Communication</item>
+        <item>Leadership</item>
+        <item>Problem Solving</item>
+    </string-array>
+
+    <!-- Degree types -->
+    <string-array name="degree_types">
+        <item>Bachelor of Science</item>
+        <item>Bachelor of Arts</item>
+        <item>Master of Science</item>
+        <item>Master of Business Administration</item>
+        <item>PhD</item>
+        <item>Associate Degree</item>
+        <item>Diploma</item>
+        <item>Certificate</item>
+    </string-array>
+
+    <string-array name="project_locations">
+        <item>Remote</item>
+        <item>In Office</item>
+    </string-array>
+    <!-- Lebanon Governorates -->
+    <string-array name="lebanon_governorates">
+        <item>Beirut</item>
+        <item>Mount Lebanon</item>
+        <item>North Lebanon</item>
+        <item>South Lebanon</item>
+        <item>Bekaa</item>
+        <item>Nabatieh</item>
+        <item>Akkar</item>
+        <item>Baalbek-Hermel</item>
+    </string-array>
+
+    <!-- Districts for each governorate -->
+    <string-array name="lebanon_districts_beirut">
+        <item>Beirut</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_mount_lebanon">
+        <item>Baabda</item>
+        <item>Aley</item>
+        <item>Matn</item>
+        <item>Keserwan</item>
+        <item>Chouf</item>
+        <item>Jbeil</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_north_lebanon">
+        <item>Tripoli</item>
+        <item>Zgharta</item>
+        <item>Bsharri</item>
+        <item>Batroun</item>
+        <item>Koura</item>
+        <item>Miniyeh-Danniyeh</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_south_lebanon">
+        <item>Sidon</item>
+        <item>Tyre</item>
+        <item>Jezzine</item>
+        <item>Nabatieh</item>
+        <item>Hasbaya</item>
+        <item>Marjeyoun</item>
+        <item>Bint Jbeil</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_bekaa">
+        <item>Zahle</item>
+        <item>West Bekaa</item>
+        <item>Rashaya</item>
+        <item>Baalbek</item>
+        <item>Hermel</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_nabatieh">
+        <item>Nabatieh</item>
+        <item>Hasbaya</item>
+        <item>Marjeyoun</item>
+        <item>Bint Jbeil</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_akkar">
+        <item>Akkar</item>
+        <item>Danniyeh</item>
+    </string-array>
+
+    <string-array name="lebanon_districts_baalbek_hermel">
+        <item>Baalbek</item>
+        <item>Hermel</item>
+    </string-array>
+
+    <!-- Cities for each district -->
+    <!-- Beirut -->
+    <string-array name="lebanon_cities_beirut">
+        <item>Downtown Beirut</item>
+        <item>Hamra</item>
+        <item>Achrafieh</item>
+        <item>Gemmayze</item>
+        <item>Verdun</item>
+        <item>Mazraa</item>
+        <item>Ras Beirut</item>
+        <item>Manara</item>
+        <item>Mar Mikhael</item>
+        <item>Badaro</item>
+    </string-array>
+
+    <!-- Mount Lebanon - Baabda -->
+    <string-array name="lebanon_cities_baabda">
+        <item>Baabda</item>
+        <item>Hazmieh</item>
+        <item>Chiyah</item>
+        <item>Furn el Chebbak</item>
+        <item>Hadath</item>
+    </string-array>
+
+    <!-- Mount Lebanon - Matn -->
+    <string-array name="lebanon_cities_matn">
+        <item>Jdeideh</item>
+        <item>Bourj Hammoud</item>
+        <item>Sin el Fil</item>
+        <item>Dekwaneh</item>
+        <item>Fanar</item>
+        <item>Antelias</item>
+        <item>Dbayeh</item>
+    </string-array>
+
+    <!-- Mount Lebanon - Keserwan -->
+    <string-array name="lebanon_cities_keserwan">
+        <item>Jounieh</item>
+        <item>Zouk Mosbeh</item>
+        <item>Harissa</item>
+        <item>Ghosta</item>
+        <item>Ajaltoun</item>
+    </string-array>
+
+    <!-- North Lebanon - Tripoli -->
+    <string-array name="lebanon_cities_tripoli">
+        <item>Tripoli</item>
+        <item>El Mina</item>
+        <item>Qobbeh</item>
+        <item>Abou Samra</item>
+    </string-array>
+
+    <!-- Bekaa - Zahle -->
+    <string-array name="lebanon_cities_zahle">
+        <item>Zahle</item>
+        <item>Kab Elias</item>
+        <item>Taalabaya</item>
+        <item>Chtaura</item>
+    </string-array>
+
+    <!-- South Lebanon - Tyre -->
+    <string-array name="lebanon_cities_tyre">
+        <item>Tyre</item>
+        <item>Qana</item>
+        <item>Abbasiyeh</item>
+        <item>Burj el-Shemali</item>
+    </string-array>
+</resources>

@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Hero Section with Project Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="294dp"
+            android:background="@drawable/header_gradient"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="48dp">
+
+            <!-- Project Title and Company Button Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Back Button -->
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Back"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/left_arrow"
+                    app:tint="@android:color/white" />
+
+                <!-- Project Title -->
+                <TextView
+                    android:id="@+id/project_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="4dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Save Button -->
+                <ImageButton
+                    android:id="@+id/btn_save_project"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/pill_background"
+                    android:contentDescription="Save Project"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_bookmark_border"
+                    app:tint="@color/black" />
+
+                <!-- Company Profile Button -->
+                <ImageButton
+                    android:id="@+id/btn_company_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/pill_background"
+                    android:contentDescription="View Company Profile"
+                    android:padding="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_profile"
+                    app:tint="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Project Description -->
+            <TextView
+                android:id="@+id/project_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.02"
+                android:lineSpacingExtra="6dp"
+                android:textColor="#CCFFFFFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Content Cards Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="-24dp">
+
+            <!-- Basic Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Category -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Category"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_category"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Education Level -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Education Level"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_education"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Compensation -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Compensation"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_compensation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <!-- Amount (conditionally visible) -->
+                    <LinearLayout
+                        android:id="@+id/amount_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Amount"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Duration -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Duration"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_duration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Start Date -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Start Date"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_start_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Deadline -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Deadline"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_deadline"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Applicants -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Current Applicants"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_applicants"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Students Required -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Students Required"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/project_students_required"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Skills Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Skills"
+                        android:textColor="@color/primary_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/project_skills"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="6dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Quiz Section (conditionally visible) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/quiz_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quiz"
+                        android:textColor="@color/primary_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Quiz Title -->
+                    <TextView
+                        android:id="@+id/quiz_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Quiz Instructions -->
+                    <TextView
+                        android:id="@+id/quiz_instructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="6dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Time Limit -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Time Limit"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/quiz_time_limit"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/divider_color"/>
+
+                    <!-- Passing Score -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Passing Score"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/quiz_passing_score"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Apply Button -->
+            <Button
+                android:id="@+id/btn_submit_application"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2196F3"
+                android:text="Apply Now"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background_modern">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule Interview"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/dialog_applicant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule interview with John Doe"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Date Picker -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/et_interview_date"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Select interview date"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp"
+        android:focusable="false"
+        android:clickable="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Time Picker -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Time:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/et_interview_time"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Select interview time"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp"
+        android:focusable="false"
+        android:clickable="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Interview Type Selection -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interview Type:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_interview_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_online"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Online"
+            android:textColor="@color/text_primary" />
+
+        <RadioButton
+            android:id="@+id/rb_in_person"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="In-person"
+            android:textColor="@color/text_primary" />
+
+    </RadioGroup>
+
+    <!-- Online Interview Options (Initially Hidden) -->
+    <LinearLayout
+        android:id="@+id/ll_online_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online Interview Method:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_online_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_chat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chat"
+                android:textColor="@color/text_primary" />
+
+            <RadioButton
+                android:id="@+id/rb_zoom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Zoom Meeting"
+                android:textColor="@color/text_primary" />
+
+        </RadioGroup>
+
+        <!-- Zoom Link Input (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/ll_zoom_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zoom Meeting Link:"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_zoom_link"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Zoom meeting link"
+                android:background="@drawable/rounded_background"
+                android:padding="12dp"
+                android:inputType="textUri"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- In-Person Location Input (Initially Hidden) -->
+    <LinearLayout
+        android:id="@+id/ll_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interview Location:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter interview location"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:inputType="textPostalAddress"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/text_secondary"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="8dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule"
+            android:textColor="@color/white"
+            android:background="@color/blue_500" />
+
+    </LinearLayout>
+
+</LinearLayout>
